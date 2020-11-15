@@ -1,0 +1,8 @@
+logging bucket
+tagging
+analytics
+budget/cost? what's all this costing?
+auto upload hugo theme
+lambda to handle updates to hugo site
+statefile bucket
+parameterise so can use as module
