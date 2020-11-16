@@ -26,9 +26,12 @@ POLICY
     error_document = "404.html"
   }
 
-  tags = {
-    type = "blog"
-  }
+  tags = merge(
+    var.defaultTags,
+    {
+      owner = var.domainName
+    },
+  )
 }
 
 resource "aws_s3_bucket_object" "indexpage" {
@@ -36,9 +39,6 @@ resource "aws_s3_bucket_object" "indexpage" {
   key          = "index.html"
   source       = "./index.html"
   content_type = "text/html"
-  tags = {
-    type = "blog"
-  }
 }
 
 resource "aws_s3_bucket_object" "errorpage" {
@@ -46,7 +46,4 @@ resource "aws_s3_bucket_object" "errorpage" {
   key          = "404.html"
   source       = "./404.html"
   content_type = "text/html"
-  tags = {
-    type = "blog"
-  }
 }

@@ -57,4 +57,11 @@ resource "aws_cloudfront_distribution" "site" {
     acm_certificate_arn = aws_acm_certificate.philsdev.arn
     ssl_support_method  = "sni-only"
   }
+
+  tags = merge(
+    var.defaultTags,
+    {
+      owner = var.domainName
+    },
+  )
 }

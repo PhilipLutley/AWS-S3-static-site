@@ -1,5 +1,12 @@
 resource "aws_route53_zone" "philsdev" {
   name = var.domainName
+
+  tags = merge(
+    var.defaultTags,
+    {
+      owner = var.domainName
+    },
+  )
 }
 
 resource "aws_route53_record" "root" {

@@ -8,6 +8,13 @@ resource "aws_acm_certificate" "philsdev" {
   lifecycle {
     create_before_destroy = true
   }
+
+  tags = merge(
+    var.defaultTags,
+    {
+      owner = var.domainName
+    },
+  )
 }
 
 resource "aws_acm_certificate_validation" "certvalidation" {
