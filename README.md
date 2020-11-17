@@ -1,6 +1,6 @@
 # AWS-S3-static-site
 
-This project is to create all the components of a secure static site on AWS S3 with cached by Cloudfront.
+A terraform module to create all components of a secure static site on AWS S3 with cached by Cloudfront.
 
 Brief summary of what is handled:
 
