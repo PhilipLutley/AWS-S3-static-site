@@ -1,15 +1,12 @@
 variable "domainName" {
-  default = "philsdev.com"
+  description = "The root domain name. E.g. example.com"
+  type        = string
 }
 
 variable "sans" {
-  description = "SAN addresses to include. E.g. www"
-  default     = "www.philsdev.com"
+  description = "Subject alternate name addresses to include. E.g. www.example.com"
 }
 
 variable "defaultTags" {
   type = map
-  default = {
-    type : "blog"
-  }
 }

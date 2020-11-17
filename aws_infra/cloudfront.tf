@@ -4,7 +4,7 @@ resource "aws_cloudfront_distribution" "site" {
 
   origin {
     origin_id   = var.domainName
-    domain_name = aws_s3_bucket.philsdev.website_endpoint
+    domain_name = aws_s3_bucket.site.website_endpoint
 
     custom_origin_config {
       http_port              = "80"
@@ -33,7 +33,7 @@ resource "aws_cloudfront_distribution" "site" {
     cached_methods = [
       "GET",
     "HEAD"]
-    target_origin_id = aws_s3_bucket.philsdev.id
+    target_origin_id = aws_s3_bucket.site.id
 
     viewer_protocol_policy = "redirect-to-https"
     compress               = true
@@ -54,7 +54,7 @@ resource "aws_cloudfront_distribution" "site" {
   }
 
   viewer_certificate {
-    acm_certificate_arn = aws_acm_certificate.philsdev.arn
+    acm_certificate_arn = aws_acm_certificate.site_certificate.arn
     ssl_support_method  = "sni-only"
   }
 

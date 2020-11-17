@@ -1,5 +1,5 @@
 output "nameservers" {
-  value = aws_route53_record.philsdevns.records
+  value = aws_route53_record.nameservers.records
 }
 
 output "cf_distribution_id" {

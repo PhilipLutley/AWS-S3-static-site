@@ -19,10 +19,17 @@ route53.tf
 * Create records for the cert validation process with ACM
 
 cloudfront.tf
-* caches the aws s3 bucket content
+* caches the s3 bucket content
 * serves up the SSL created by ACM
 * Redirects http to https
 
 acm.tf
 * Creates ACM certificate in us-east-1 (in order to use with cloudfront)
 * note acm.tf uses an aws provider alias to handle the us-east-1 stuff
+
+# Example Usage
+````
+source = x
+domainName = x
+sans = x
+defaultTags = map
