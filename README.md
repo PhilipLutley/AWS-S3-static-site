@@ -27,9 +27,6 @@ acm.tf
 * Creates ACM certificate in us-east-1 (in order to use with cloudfront)
 * note acm.tf uses an aws provider alias to handle the us-east-1 stuff
 
-Tagging
-* map of tags
-
 # Example Usage
 ```hcl
 module "site" {
