@@ -31,7 +31,9 @@ Tagging
 * map of tags
 
 # Example Usage
-````
+```hcl
+module "site" {
 source = "git@github.com:PhilipLutley/AWS-S3-static-site.git"
 domainName = "example.com"
 sans = "www.example.com"
+}
