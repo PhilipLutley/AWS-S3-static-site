@@ -58,10 +58,7 @@ resource "aws_cloudfront_distribution" "site" {
     ssl_support_method  = "sni-only"
   }
 
-  tags = merge(
-    var.defaultTags,
-    {
-      owner = var.domainName
-    },
-  )
+  tags = {
+    owner = var.domainName
+  }
 }

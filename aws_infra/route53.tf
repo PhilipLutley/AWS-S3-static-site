@@ -1,12 +1,9 @@
 resource "aws_route53_zone" "sitedns" {
   name = var.domainName
 
-  tags = merge(
-    var.defaultTags,
-    {
-      owner = var.domainName
-    },
-  )
+  tags = {
+    owner = var.domainName
+  }
 }
 
 resource "aws_route53_record" "root" {

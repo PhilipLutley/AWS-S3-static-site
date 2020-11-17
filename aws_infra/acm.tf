@@ -9,12 +9,9 @@ resource "aws_acm_certificate" "site_certificate" {
     create_before_destroy = true
   }
 
-  tags = merge(
-    var.defaultTags,
-    {
-      owner = var.domainName
-    },
-  )
+  tags = {
+    owner = var.domainName
+  }
 }
 
 resource "aws_acm_certificate_validation" "certvalidation" {
