@@ -39,14 +39,14 @@ POLICY
 resource "aws_s3_bucket_object" "indexpage" {
   bucket       = aws_s3_bucket.site.id
   key          = "index.html"
-  source       = "../html/index.html"
+  source       = "/html/index.html"
   content_type = "text/html"
 }
 
 resource "aws_s3_bucket_object" "errorpage" {
   bucket       = aws_s3_bucket.site.id
   key          = "404.html"
-  source       = "../html/404.html"
+  source       = "/html/404.html"
   content_type = "text/html"
 }
 
