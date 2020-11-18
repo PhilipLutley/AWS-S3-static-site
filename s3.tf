@@ -36,20 +36,6 @@ POLICY
   }
 }
 
-resource "aws_s3_bucket_object" "indexpage" {
-  bucket       = aws_s3_bucket.site.id
-  key          = "index.html"
-  source       = "index.html"
-  content_type = "text/html"
-}
-
-resource "aws_s3_bucket_object" "errorpage" {
-  bucket       = aws_s3_bucket.site.id
-  key          = "404.html"
-  source       = "404.html"
-  content_type = "text/html"
-}
-
 resource "aws_s3_bucket" "site-logs" {
   bucket = "${var.domainName}-sitelogs"
   acl    = "log-delivery-write"
